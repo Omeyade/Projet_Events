@@ -28,9 +28,9 @@
 19        android:testOnly="true"
 20        android:theme="@style/Theme.HelloWorld" >
 20-->C:\Users\omeya\AndroidStudioProjects\Projet v1\app\src\main\AndroidManifest.xml:11:9-48
-21        <activity android:name="com.example.helloworld.MainActivity" >
+21        <activity android:name="com.example.esiee_events.MainActivity" >
 21-->C:\Users\omeya\AndroidStudioProjects\Projet v1\app\src\main\AndroidManifest.xml:12:9-18:20
-21-->C:\Users\omeya\AndroidStudioProjects\Projet v1\app\src\main\AndroidManifest.xml:12:19-47
+21-->C:\Users\omeya\AndroidStudioProjects\Projet v1\app\src\main\AndroidManifest.xml:12:19-71
 22            <intent-filter>
 22-->C:\Users\omeya\AndroidStudioProjects\Projet v1\app\src\main\AndroidManifest.xml:13:13-17:29
 23                <action android:name="android.intent.action.MAIN" />

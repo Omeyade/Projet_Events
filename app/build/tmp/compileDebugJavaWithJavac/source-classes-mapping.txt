@@ -1,4 +1,4 @@
-com/example/helloworld/BuildConfig.java
- com.example.helloworld.BuildConfig
-com/example/helloworld/MainActivity.java
- com.example.helloworld.MainActivity
+com/example/esiee_events/BuildConfig.java
+ com.example.esiee_events.BuildConfig
+com/example/esiee_events/MainActivity.java
+ com.example.esiee_events.MainActivity
