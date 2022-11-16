@@ -1,12 +1,15 @@
 package com.example.esiee_events;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 
 
@@ -21,6 +24,22 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
 
     private OnItemClickListener callback;
 
+    public BottomMenuFragment(){
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        // This makes sure that the host activity has implemented the callback interface
+        // If not, it throws an exception
+        try {
+            callback = (OnItemClickListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnItemClickListener");
+        }
+    }
+
+
     @Override
     public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
         View myView = inflater.inflate(R.layout.fragment_bottom_menu, container, false);
@@ -30,6 +49,11 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
         boutonMois.setOnClickListener(this);
         boutonReglages = (Button) myView.findViewById(R.id.Reglages);
         boutonReglages.setOnClickListener(this);
+
+        public void onItemClick(int i){
+            callback.onItemSelected(i);
+        }
+
         return myView;
     }
 

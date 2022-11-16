@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         MoisFragment moisFragment = new MoisFragment();
         //A faire--------------------------------------
         //Fragment.setIndex(position);
-        //HELLOWWWW
+
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_fragment_layout, moisFragment)
