@@ -41,18 +41,34 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
 
 
     @Override
-    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
         View myView = inflater.inflate(R.layout.fragment_bottom_menu, container, false);
         boutonSemaine = (Button) myView.findViewById(R.id.Semaine);
-        boutonSemaine.setOnClickListener(this);
-        boutonMois = (Button) myView.findViewById(R.id.Mois);
-        boutonMois.setOnClickListener(this);
-        boutonReglages = (Button) myView.findViewById(R.id.Reglages);
-        boutonReglages.setOnClickListener(this);
+        boutonSemaine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callback.onItemSelected(1);
 
-        public void onItemClick(int i){
-            callback.onItemSelected(i);
-        }
+            }
+        });
+        boutonMois = (Button) myView.findViewById(R.id.Mois);
+        boutonMois.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callback.onItemSelected(2);
+
+            }
+        });
+        boutonReglages = (Button) myView.findViewById(R.id.Reglages);
+        boutonReglages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callback.onItemSelected(3);
+
+            }
+        });
+
+
 
         return myView;
     }

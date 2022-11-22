@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         SemaineFragment semaineFragment = new SemaineFragment();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.main_fragment_layout, bottomMenuFragment)
-                .add(R.id.menu_fragment_layout, semaineFragment)
+                .add(R.id.main_fragment_layout, semaineFragment)
+                .add(R.id.menu_fragment_layout, bottomMenuFragment)
                 .commit();
 
     }
@@ -34,15 +34,30 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
         // Replace the current fragment with a new one
+        BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
+        SemaineFragment semaineFragment = new SemaineFragment();
         MoisFragment moisFragment = new MoisFragment();
-        //A faire--------------------------------------
-        //Fragment.setIndex(position);
+        ReglagesFragment reglagesFragment = new ReglagesFragment();
 
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_fragment_layout, moisFragment)
-                .commit();
+        if(position==1){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_layout, semaineFragment)
+                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
+                    .commit();
+        }
+        else if(position==2){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_layout, moisFragment)
+                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
+                    .commit();
+        }
+        else if(position==3){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_layout, reglagesFragment)
+                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
+                    .commit();
         }
     }
-
 }
+
