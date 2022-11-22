@@ -887,6 +887,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color pastel_blue
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1345,6 +1346,9 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_calendar_month_24
+drawable ic_baseline_calendar_view_week_24
+drawable ic_baseline_settings_24
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
@@ -1389,8 +1393,12 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id META
+id Menu
+id Mois
+id Reglages
 id SHIFT
 id SYM
+id Semaine
 id TOP_END
 id TOP_START
 id accessibility_action_clickable_span
@@ -1530,7 +1538,9 @@ id line1
 id line3
 id listMode
 id list_item
+id main_fragment_layout
 id masked
+id menu_fragment_layout
 id message
 id middle
 id mini
@@ -1613,6 +1623,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id simpleCalendarView
 id skipCollapsed
 id slide
 id smallLabel
@@ -1633,6 +1644,7 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+id tab_layout_root_view
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -1753,6 +1765,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_bottom_menu
+layout fragment_mois
+layout fragment_reglages
+layout fragment_semaine
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -1845,6 +1861,7 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string mtrl_badge_numberless_content_description

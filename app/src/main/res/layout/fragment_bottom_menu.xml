@@ -3,6 +3,7 @@
     android:id="@+id/Menu"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/pastel_blue"
     android:layout_height="80dp"
     android:layout_gravity="bottom"
     android:orientation="horizontal"
@@ -13,8 +14,8 @@
         android:id="@+id/Semaine"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="@android:color/black"
         android:layout_weight="1"
-        android:background="@color/teal_200"
         android:drawableTop="@drawable/ic_baseline_calendar_view_week_24"/>
 
     <Button

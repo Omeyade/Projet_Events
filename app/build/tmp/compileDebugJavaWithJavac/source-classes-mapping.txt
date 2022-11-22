@@ -1,4 +1,16 @@
+com/example/esiee_events/MoisFragment.java
+ com.example.esiee_events.MoisFragment
 com/example/esiee_events/BuildConfig.java
  com.example.esiee_events.BuildConfig
+com/example/esiee_events/BottomMenuFragment.java
+ com.example.esiee_events.BottomMenuFragment
+ com.example.esiee_events.BottomMenuFragment$1
+ com.example.esiee_events.BottomMenuFragment$2
+ com.example.esiee_events.BottomMenuFragment$3
+ com.example.esiee_events.BottomMenuFragment$OnItemClickListener
+com/example/esiee_events/ReglagesFragment.java
+ com.example.esiee_events.ReglagesFragment
 com/example/esiee_events/MainActivity.java
  com.example.esiee_events.MainActivity
+com/example/esiee_events/SemaineFragment.java
+ com.example.esiee_events.SemaineFragment
