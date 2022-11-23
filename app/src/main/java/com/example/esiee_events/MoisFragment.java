@@ -76,9 +76,6 @@ public class MoisFragment extends Fragment {
     }
 
 
-
-        this.gridView = (GridView)findViewById(R.id.gridView);
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
