@@ -14,7 +14,7 @@
         android:id="@+id/Semaine"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@android:color/black"
+        android:backgroundTint="@color/darker_blue"
         android:layout_weight="1"
         android:drawableTop="@drawable/ic_baseline_calendar_view_week_24"/>
 
@@ -22,6 +22,7 @@
         android:id="@+id/Mois"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:backgroundTint="@color/darker_blue"
         android:layout_weight="1"
         android:drawableTop="@drawable/ic_baseline_calendar_month_24" />
 
@@ -29,6 +30,7 @@
         android:id="@+id/Reglages"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:backgroundTint="@color/darker_blue"
         android:layout_weight="1"
         android:drawableTop="@drawable/ic_baseline_settings_24"/>
 

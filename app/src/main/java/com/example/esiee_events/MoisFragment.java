@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +19,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MoisFragment extends Fragment {
+    private GridView gridView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,7 +59,25 @@ public class MoisFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        this.gridView = (GridView)findViewById(R.id.gridView);
+
+        ArrayList<Integer> Mois = new ArrayList<>(31);
+        for(int k=0; k<31;k++ ){
+            Mois.add(k+1);
+        }
+
+        ArrayAdapter<Integer> arrayAdapter
+                = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, Mois);
+        gridView.setAdapter(arrayAdapter);
+
+
+
     }
+
+
+
+        this.gridView = (GridView)findViewById(R.id.gridView);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

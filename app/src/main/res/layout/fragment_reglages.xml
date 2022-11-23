@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reglages"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:orientation="vertical"
     android:background="@color/pastel_blue"
     tools:context=".ReglagesFragment">
+    <!-- display two Button's and a FrameLayout to replace the Fragment's  -->
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/Profil"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGLAGES !!"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:layout_weight="1"
+        android:backgroundTint="@color/darker_blue"
+        android:drawableTop="@drawable/ic_profil" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/Notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/darker_blue"
+        android:drawableTop="@drawable/ic_notifications" />
+
+    <Button
+        android:id="@+id/Apropos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/darker_blue"
+        android:drawableTop="@drawable/ic_apropos"
+        android:text="A propos de nous"
+        android:textColor="@color/white"
+        />
+
+
+
+
+</LinearLayout>
