@@ -1,6 +1,7 @@
 package com.example.esiee_events;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -94,20 +96,37 @@ public class MoisFragment extends Fragment {
             Mois.add(Novembre.get(k).jour);
         }
 
-        //Changer la couleur de l'element si il y a un evenement ce jour là
-        for(int k=0; k<30; k++){
-            if(Novembre.get(k).isEvent()==true){
-                //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
-                gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
-                //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
-            }
-        }
 
         //Afficher le calendrier
         ArrayAdapter<Integer> arrayAdapter
                 = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_list_item_1, Mois);
         gridView.setAdapter(arrayAdapter);
+        gridView.getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        //Changer la couleur de l'element si il y a un evenement ce jour là
+                        for(int k=0; k<30; k++){
+                            if(Novembre.get(k).isEvent()==true){
+                                //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                                gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
+                                //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                            gridView.getViewTreeObserver()
+                                    .removeOnGlobalLayoutListener(this);
+                        } else {
+                            gridView.getViewTreeObserver()
+                                    .removeGlobalOnLayoutListener(this);
+                        }
+
+                    }
+                }
+        );
+
 
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_mois, container, false);
