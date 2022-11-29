@@ -1,43 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/reglages"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="top"
     android:orientation="vertical"
-    android:background="@color/pastel_blue"
-    tools:context=".ReglagesFragment">
+    tools:context=".MainActivity">
     <!-- display two Button's and a FrameLayout to replace the Fragment's  -->
 
-    <Button
+
+
+    <FrameLayout
+        android:id="@+id/reglages"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:background="@color/purple_500"
+        android:textColor="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:drawableLeft="@drawable/ic_baseline_settings_24"
+            android:text=" Réglages"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="35dp"/>
+
+
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/Profil"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_weight="1"
-        android:backgroundTint="@color/darker_blue"
-        android:drawableTop="@drawable/ic_profil" />
+        android:background="@color/purple_700"
+        >
 
-    <Button
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:drawableLeft="@drawable/ic_profil"
+            android:layout_marginTop="5dp"
+            android:text=" Profil"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+
+
+    </FrameLayout>
+
+
+    <FrameLayout
+
+
         android:id="@+id/Notifications"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_weight="1"
-        android:backgroundTint="@color/darker_blue"
-        android:drawableTop="@drawable/ic_notifications" />
+        android:background="@color/purple_700"
+        android:color="@color/white">
 
-    <Button
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_notifications"
+            android:text=" Notifications"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"/>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:checked="true"
+            android:layout_gravity="right"
+            android:switchMinWidth="60dp"
+            android:text="Activer:"
+            android:textColor="@color/white"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <FrameLayout
         android:id="@+id/Apropos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_weight="1"
-        android:backgroundTint="@color/darker_blue"
-        android:drawableTop="@drawable/ic_apropos"
-        android:text="A propos de nous"
-        android:textColor="@color/white"
-        />
+        android:background="@color/purple_700">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_apropos"
+            android:layout_marginTop="5dp"
+            android:text=" A propos de ma beauté"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
 
+
+    </FrameLayout>
 
 
 </LinearLayout>
