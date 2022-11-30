@@ -17,6 +17,41 @@
         android:layout_marginRight="10dp">
 
         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/Previous_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/pastel_blue"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_previous"
+                android:paddingTop="10dp"
+                style="?android:attr/borderlessButtonStyle"/>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="10">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Novembre"
+                    android:textSize="25dp"
+                    android:gravity="center"/>
+            </FrameLayout>
+            <Button
+                android:id="@+id/Next_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/pastel_blue"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_next"
+                android:paddingTop="10dp"
+                style="?android:attr/borderlessButtonStyle"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal" >
