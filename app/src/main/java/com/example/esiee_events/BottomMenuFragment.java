@@ -19,7 +19,7 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
     Button boutonReglages;
 
     interface OnItemClickListener {
-        void onItemSelected(int position);
+        void onItemSelectedBottom(int position);
     }
 
     private OnItemClickListener callback;
@@ -47,7 +47,7 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
         boutonSemaine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callback.onItemSelected(1);
+                callback.onItemSelectedBottom(1);
 
             }
         });
@@ -55,7 +55,7 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
         boutonMois.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callback.onItemSelected(2);
+                callback.onItemSelectedBottom(2);
 
             }
         });
@@ -63,7 +63,7 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
         boutonReglages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callback.onItemSelected(3);
+                callback.onItemSelectedBottom(3);
 
             }
         });

@@ -35,9 +35,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="10">
                 <TextView
+                    android:id="@+id/Nom_Mois"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Novembre"
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>

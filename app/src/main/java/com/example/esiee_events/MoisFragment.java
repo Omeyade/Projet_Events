@@ -1,6 +1,8 @@
 package com.example.esiee_events;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.fonts.Font;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -10,128 +12,133 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MoisFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class MoisFragment extends Fragment {
-    private GridView gridView;
+
+public class MoisFragment extends Fragment implements AdapterView.OnItemClickListener{
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private GridView gridView;
+
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+
+    interface OnItemClickListener {
+        void onItemSelectedJour(int position);
+    }
+
+    private MoisFragment.OnItemClickListener callback;
 
     public MoisFragment() {
         // Required empty public constructor
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        // This makes sure that the host activity has implemented the callback interface
+        // If not, it throws an exception
+        try {
+            callback = (MoisFragment.OnItemClickListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnItemClickListener");
+        }
     }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+
      * @return A new instance of fragment MoisFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MoisFragment newInstance(String param1, String param2) {
-        MoisFragment fragment = new MoisFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-
-    /*@Override
-    public void onCreate(Bundle savedInstanceState) {
-
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }*/
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_mois, container, false);
         this.gridView = (GridView)myView.findViewById(R.id.gridView);
-        //Jour jourNov = new Jour(false, 0, 11, 2022, 0, 0, "", "", 0);
+        ListeMois listeMois = new ListeMois();
+        Mois mois = listeMois.getDatalist().get(0);
+        ArrayList<String> Annee = new ArrayList<String>(12){{
+            for(int i=0; i<10; i++) add("");
+            add("Novembre");
+            add("Decembre");
+        }};
 
-        //creation d'un mois pour le test
-        ArrayList<Jour> Novembre = new ArrayList<>(30);
-        for(int k=0; k<30;k++ ){
-            Jour jourNov = new Jour(false, k+1, 11, 2022, 0, 0, "", "", "", 0);
-            if (k==5){
-                jourNov.setEvent(true);
-                jourNov.setHeure(18);
-                jourNov.setMinute(30);
-                jourNov.setNom("Karaoke");
-                jourNov.setLieu("Amphi 210");
-                jourNov.setCommentaire("Karaoke organisé par le Club Chorale");
-                jourNov.setPrix(0);
-            }
-            Novembre.add(jourNov);
-        }
+        TextView nomMois = (TextView)myView.findViewById(R.id.Nom_Mois);
+        nomMois.setText(Annee.get(mois.getNumeroMois()-1));
+
+
 
         //tableau d'entiers pour afficher dans le calendrier
-        ArrayList<Integer> Mois = new ArrayList<>(30);
-        for(int k=0; k<30;k++ ){
-            Mois.add(Novembre.get(k).jour);
+        ArrayList<String > numerosMois = new ArrayList<>(mois.getTailleMois());
+        for(int k=0; k<mois.getPremierJour(); k++){
+            numerosMois.add("");
+        }
+        for(int k=0; k<=mois.getTailleMois();k++){
+            numerosMois.add(String.valueOf(k+1));
         }
 
 
 
         //Afficher le calendrier
-        ArrayAdapter<Integer> arrayAdapter
-                = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_list_item_1, Mois);
-        gridView.setAdapter(arrayAdapter);
-        gridView.getViewTreeObserver().addOnGlobalLayoutListener(
-                new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        //Changer la couleur de l'element si il y a un evenement ce jour là
-                        for(int k=0; k<30; k++){
-                            if(Novembre.get(k).isEvent()==true){
-                                //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
-                                gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
-                                //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
+        //ArrayAdapter<String> arrayAdapter
+                //= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,numerosMois );
+        ArrayAdapter<String> arrayAdapter
+                = new ArrayAdapter<String>(getActivity(), R.layout.grid_view_item_1,numerosMois );
 
-                            }
-                        }
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                            gridView.getViewTreeObserver()
-                                    .removeOnGlobalLayoutListener(this);
-                        } else {
-                            gridView.getViewTreeObserver()
-                                    .removeGlobalOnLayoutListener(this);
-                        }
+        gridView.setAdapter(arrayAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                callback.onItemSelectedJour(i);
+            }
+            /*@Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }*/
+        });
+        gridView.getViewTreeObserver().addOnGlobalLayoutListener(
+        new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                //Changer la couleur de l'element si il y a un evenement ce jour là
+                for (int k = 0; k < mois.tailleMois; k++) {
+                    if (mois.getListeJours().get(k).isEvent() == true) {
+                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                        gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
+                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
                 }
-        );
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    gridView.getViewTreeObserver()
+                            .removeOnGlobalLayoutListener(this);
+                } else {
+                    gridView.getViewTreeObserver()
+                            .removeGlobalOnLayoutListener(this);
+                }
 
-
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_mois, container, false);
-
+            }
+        }
+);
         return myView;
-
     }
 }

@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener{
+public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener {
     //Button boutonMois;
+
 
 
     @Override
@@ -26,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
                 .add(R.id.menu_fragment_layout, bottomMenuFragment)
                 .commit();
 
+
+
     }
 
     //@Override // for nested class ListFragment.onItemClickListener
-    public void onItemSelected(int position) {
+    public void onItemSelectedBottom(int position) {
         // Create a Toast that displays the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
@@ -55,6 +58,26 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         else if(position==3){
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_layout, reglagesFragment)
+                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
+                    .commit();
+        }
+    }
+
+    public void onItemSelectedJour(int position) {
+        ListeMois listeMois = new ListeMois();
+        Mois mois = listeMois.getDatalist().get(0);
+
+        //int dayEvent=mois.getListeEvents().get(0);
+        // Create a Toast that displays the position that was clicked
+        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+
+        // Replace the current fragment with a new one
+        BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
+        EvenementFragment evenementFragment = new EvenementFragment();
+
+        if(position==6){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_layout, evenementFragment)
                     //.add(R.id.main_fragment_layout, bottomMenuFragment)
                     .commit();
         }
