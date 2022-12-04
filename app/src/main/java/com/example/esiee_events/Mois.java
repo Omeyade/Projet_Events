@@ -20,9 +20,7 @@ public class Mois {
         for(int k=0; k<tailleMois;k++ ){
             Jour jour = new Jour(false, k+1, numeroMois, annee, 0, 0, "", "", "", 0);
             listeJours.add(jour);
-            if (jour.isEvent()){
-                listeEvents.add(k+1);
-            }
+
         }
     }
 
@@ -66,6 +64,7 @@ public class Mois {
 
     public void setEvent(int dateJour, Jour jour) {
         listeJours.set(dateJour, jour);
+        listeEvents.add(dateJour);
     }
 
 

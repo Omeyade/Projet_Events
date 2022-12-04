@@ -40,7 +40,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
     interface OnItemClickListener {
-        void onItemSelectedJour(int position);
+        void onItemSelectedJour(int position, ArrayList<Integer> dayEvent);
     }
 
     private MoisFragment.OnItemClickListener callback;
@@ -86,6 +86,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         nomMois.setText(Annee.get(mois.getNumeroMois()-1));
 
 
+        //Toast.makeText(getActivity(), mois.getListeJours().get(0).getJour(), Toast.LENGTH_SHORT).show();
 
         //tableau d'entiers pour afficher dans le calendrier
         ArrayList<String > numerosMois = new ArrayList<>(mois.getTailleMois());
@@ -95,7 +96,6 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         for(int k=0; k<=mois.getTailleMois();k++){
             numerosMois.add(String.valueOf(k+1));
         }
-
 
 
         //Afficher le calendrier
@@ -108,7 +108,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                callback.onItemSelectedJour(i);
+                callback.onItemSelectedJour(i, mois.getListeEvents());
             }
             /*@Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -121,7 +121,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             public void onGlobalLayout() {
                 //Changer la couleur de l'element si il y a un evenement ce jour là
                 for (int k = 0; k < mois.tailleMois; k++) {
-                    if (mois.getListeJours().get(k).isEvent() == true) {
+                    if (mois.getListeJours().get(k).isEvent()) {
                         //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
                         gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
                         //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();

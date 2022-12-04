@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener {
     //Button boutonMois;
+
 
 
 
@@ -63,9 +66,9 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         }
     }
 
-    public void onItemSelectedJour(int position) {
-        ListeMois listeMois = new ListeMois();
-        Mois mois = listeMois.getDatalist().get(0);
+    public void onItemSelectedJour(int position, ArrayList<Integer> dayEvent) {
+        Bundle b = new Bundle();
+        int taille=dayEvent.size();
 
         //int dayEvent=mois.getListeEvents().get(0);
         // Create a Toast that displays the position that was clicked
@@ -75,12 +78,17 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
         EvenementFragment evenementFragment = new EvenementFragment();
 
-        if(position==6){
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_fragment_layout, evenementFragment)
-                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
-                    .commit();
+        for(int k=0; k<taille; k++){
+            if(position== dayEvent.get(k)){
+                b.putString("dayEvent", String.valueOf(position));
+                b.putString("monthEvent", String.valueOf(11));
+                evenementFragment.setArguments(b);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_fragment_layout, evenementFragment)
+                        .commit();
+            }
         }
+
     }
 }
 

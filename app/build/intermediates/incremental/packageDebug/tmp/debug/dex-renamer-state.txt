@@ -1,4 +1,4 @@
-#Sat Dec 03 18:40:49 CET 2022
+#Sun Dec 04 16:45:14 CET 2022
 base.0=C\:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
