@@ -63,11 +63,21 @@ public class EvenementFragment extends Fragment {
         ListeMois listeMois = new ListeMois();
         Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent"))-11);
         ArrayList <Jour> listeJours = mois.getListeJours();
+        Jour jour = listeJours.get(Integer.parseInt(getArguments().getString("dayEvent")));
 
         TextView nomEvent = (TextView)myView.findViewById(R.id.Nom_Event);
-        nomEvent.setText(listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom());
+        nomEvent.setText(jour.getNom());
 
-        Toast.makeText(getActivity(), mois.getListeJours().get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();
+        TextView dateHeureDetail = (TextView)myView.findViewById(R.id.Date_et_Heure_detail);
+        dateHeureDetail.setText("Le "+jour.getJour()+"/"+jour.getMois()+"/"+jour.getAnnee()+", à "+jour.getHeure()+"H");
+
+        TextView localisationDetail = (TextView)myView.findViewById(R.id.Localisation_detail);
+        localisationDetail.setText(jour.getLieu());
+
+        //TextView nomEvent = (TextView)myView.findViewById(R.id.Nom_Event);
+        //nomEvent.setText(jour.getNom());
+
+        Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();
         return myView;
     }
 }

@@ -43,7 +43,6 @@
             android:layout_marginTop="5dp"
             android:drawableLeft="@drawable/ic_club"
             android:id="@+id/Nom_Event"
-
             android:textColor="@color/white"
             android:textSize="20dp" />
 
@@ -74,13 +73,13 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/Date_et_Heure_detail"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:background="@color/soft_blue">
 
         <TextView
+            android:id="@+id/Date_et_Heure_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -115,13 +114,13 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/Localisation_detail"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:background="@color/soft_blue">
 
         <TextView
+            android:id="@+id/Localisation_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
