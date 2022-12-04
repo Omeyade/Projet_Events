@@ -74,8 +74,18 @@ public class EvenementFragment extends Fragment {
         TextView localisationDetail = (TextView)myView.findViewById(R.id.Localisation_detail);
         localisationDetail.setText(jour.getLieu());
 
-        //TextView nomEvent = (TextView)myView.findViewById(R.id.Nom_Event);
-        //nomEvent.setText(jour.getNom());
+        TextView commentairesDetail = (TextView)myView.findViewById(R.id.Commentaires_detail);
+        commentairesDetail.setText(jour.getCommentaire());
+
+        TextView prixDetail = (TextView)myView.findViewById(R.id.Prix_detail);
+        float prix=jour.getPrix();
+        if (prix>0){
+            prixDetail.setText(prix+"€");
+        }
+        else{
+            prixDetail.setText("Gratuit !");
+        }
+
 
         Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();
         return myView;
