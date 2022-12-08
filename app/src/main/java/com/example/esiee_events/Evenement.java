@@ -11,7 +11,7 @@ public class Evenement {
     String commentaire;
     float prix;
 
-    public Evenement(boolean event, int jour, int mois, int annee, int heure, int duree, String nom, String lieu, String commentaire, float prix) {
+    public Evenement(int heure, int duree, String nom, String lieu, String commentaire, float prix) {
         /*this.jour = jour;
         this.mois = mois;
         this.annee = annee;*/

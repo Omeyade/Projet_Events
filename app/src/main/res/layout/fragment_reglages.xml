@@ -30,7 +30,6 @@
             android:textSize="35dp"/>
 
 
-
     </FrameLayout>
 
     <FrameLayout
@@ -40,7 +39,6 @@
         android:layout_weight="1"
         android:background="@color/purple_700"
         >
-
 
         <TextView
             android:layout_width="match_parent"
@@ -52,6 +50,15 @@
             android:textColor="@color/white"
             android:textSize="20dp" />
 
+        <EditText
+            android:id="@+id/Nom_Utilisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="Tapez votre nom"
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            />
 
 
 
@@ -95,11 +102,19 @@
             android:textOff="OFF"
             android:textOn="ON"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/Test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
     </FrameLayout>
     <FrameLayout
         android:id="@+id/Apropos"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:background="@color/purple_700">
 
@@ -112,11 +127,29 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_apropos"
             android:layout_marginTop="5dp"
-            android:text=" A propos de ma beauté"
+            android:text=" A propos de Event ESIEE"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
+    </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/Apropos_detail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:background="@color/purple_700">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="27dp"
+            android:textStyle="italic"
+            android:text=" L'application Event ESIEE a pour but de réunir l'ensemble des informations concernant les évènements associatifs de l'école.
+            Plus besoin de chercher : elles sont désormais entre vos mains dès que vous le souahitez !"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
     </FrameLayout>
 

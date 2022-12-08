@@ -3,6 +3,7 @@ package com.example.esiee_events;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.fonts.Font;
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -18,6 +19,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,8 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private GridView gridView;
+    int jourActuel;
+    int moisActuel;
 
 
     // TODO: Rename and change types of parameters
@@ -72,6 +76,15 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        jourActuel = Integer.parseInt(date.substring(0, 2));
+
+
         View myView = inflater.inflate(R.layout.fragment_mois, container, false);
         this.gridView = (GridView)myView.findViewById(R.id.gridView);
         ListeMois listeMois = new ListeMois();
@@ -121,13 +134,26 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             public void onGlobalLayout() {
                 //Changer la couleur de l'element si il y a un evenement ce jour là
                 for (int k = 0; k < mois.tailleMois; k++) {
+                    if (k==jourActuel) {
+                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                        gridView.getChildAt(k).setBackgroundColor(0xFFBEC1E9);
+                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
+
+                    }
                     if (mois.getListeJours().get(k).isEvent()) {
                         //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
                         gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
                         //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
+                    if (mois.getListeJours().get(k).isEvent() && k==jourActuel) {
+                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                        gridView.getChildAt(k).setBackgroundColor(0xFFA526A8);
+                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
+
+                    }
                 }
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     gridView.getViewTreeObserver()
                             .removeOnGlobalLayoutListener(this);

@@ -1,12 +1,19 @@
 package com.example.esiee_events;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +21,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ReglagesFragment extends Fragment {
+    EditText mEditText;
+    String text;
+    TextView Test;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,20 +55,41 @@ public class ReglagesFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            text = mEditText.getText().toString();
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+
+            Test.setText(text);
+
+        }
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View myView = inflater.inflate(R.layout.fragment_reglages, container, false);
+
+        mEditText = myView.findViewById(R.id.Nom_Utilisateur);
+        Test = myView.findViewById(R.id.Test);
+        mEditText.addTextChangedListener(textWatcher);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reglages, container, false);
+        return myView;
     }
 }
