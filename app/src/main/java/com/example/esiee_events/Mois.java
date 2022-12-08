@@ -18,7 +18,7 @@ public class Mois {
         this.premierJour=premierJour;
 
         for(int k=0; k<tailleMois;k++ ){
-            Jour jour = new Jour(false, k+1, numeroMois, annee, 0, 0, "", "", "", 0);
+            Jour jour = new Jour(false, k+1, numeroMois, annee);
             listeJours.add(jour);
 
         }
@@ -62,7 +62,7 @@ public class Mois {
 
 
 
-    public void setEvent(int dateJour, Jour jour) {
+    public void setJour(int dateJour, Jour jour) {
         listeJours.set(dateJour, jour);
         listeEvents.add(dateJour);
     }

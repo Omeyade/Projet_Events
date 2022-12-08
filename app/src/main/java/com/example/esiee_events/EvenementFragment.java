@@ -60,7 +60,7 @@ public class EvenementFragment extends Fragment {
         // Inflate the layout for this fragment
         View myView = inflater.inflate(R.layout.fragment_evenement, container, false);
 
-        ListeMois listeMois = new ListeMois();
+        /*ListeMois listeMois = new ListeMois();
         Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent"))-11);
         ArrayList <Jour> listeJours = mois.getListeJours();
         Jour jour = listeJours.get(Integer.parseInt(getArguments().getString("dayEvent")));
@@ -87,7 +87,7 @@ public class EvenementFragment extends Fragment {
         }
 
 
-        Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();*/
         return myView;
     }
 }

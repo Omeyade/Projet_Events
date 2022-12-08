@@ -1,42 +1,34 @@
 package com.example.esiee_events;
 
-import java.util.ArrayList;
-
-public class Jour {
-    boolean event;
-    int jour;
+public class Evenement {
+    /*int jour;
     int mois;
-    int annee;
-    ArrayList<Evenement> listeEvents= new ArrayList<>();
-    /*int heure;
+    int annee;*/
+    int heure;
     int duree;
     String nom;
     String lieu;
     String commentaire;
-    float prix;*/
+    float prix;
 
-    public Jour(boolean event, int jour, int mois, int annee) {
-        this.event = event;
-        this.jour = jour;
+    public Evenement(boolean event, int jour, int mois, int annee, int heure, int duree, String nom, String lieu, String commentaire, float prix) {
+        /*this.jour = jour;
         this.mois = mois;
-        this.annee = annee;
-        /*this.heure = heure;
+        this.annee = annee;*/
+        this.heure = heure;
         this.duree = duree;
         this.nom = nom;
         this.lieu = lieu;
         this.commentaire = commentaire;
-        this.prix = prix;*/
+        this.prix = prix;
     }
 
 
 
 
 
-    public void setEvent(boolean event) {
-        this.event = event;
-    }
 
-    public void setJour(int jour) {
+    /*public void setJour(int jour) {
         this.jour = jour;
     }
 
@@ -46,9 +38,9 @@ public class Jour {
 
     public void setAnnee(int annee) {
         this.annee = annee;
-    }
+    }*/
 
-    /*public void setHeure(int heure) {
+    public void setHeure(int heure) {
         this.heure = heure;
     }
 
@@ -70,13 +62,11 @@ public class Jour {
 
     public void setPrix(float prix) {
         this.prix = prix;
-    }*/
-
-    public boolean isEvent() {
-        return event;
     }
 
-    public int getJour() {
+
+
+    /*public int getJour() {
         return jour;
     }
 
@@ -86,9 +76,9 @@ public class Jour {
 
     public int getAnnee() {
         return annee;
-    }
+    }*/
 
-    /*public int getHeure() {
+    public int getHeure() {
         return heure;
     }
 
@@ -110,14 +100,6 @@ public class Jour {
 
     public float getPrix() {
         return prix;
-    }*/
-
-    public void setEvent(Evenement evenement) {
-        listeEvents.add(evenement);
-    }
-
-    public ArrayList<Evenement> getEvent() {
-        return listeEvents;
     }
 
 

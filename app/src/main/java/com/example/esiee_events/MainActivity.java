@@ -76,15 +76,15 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
         // Replace the current fragment with a new one
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
-        EvenementFragment evenementFragment = new EvenementFragment();
+        JourFragment jourFragment = new JourFragment();
 
         for(int k=0; k<taille; k++){
             if(position== dayEvent.get(k)){
                 b.putString("dayEvent", String.valueOf(position));
                 b.putString("monthEvent", String.valueOf(11));
-                evenementFragment.setArguments(b);
+                jourFragment.setArguments(b);
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_fragment_layout, evenementFragment)
+                        .replace(R.id.main_fragment_layout, jourFragment)
                         .commit();
             }
         }
