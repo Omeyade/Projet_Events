@@ -1,5 +1,7 @@
 package com.example.esiee_events;
 
+import android.icu.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 
 public class ListeMois{
@@ -10,9 +12,10 @@ public class ListeMois{
     public ListeMois(){
         Mois novembre = new Mois(30, 11, 2022, 1);
         Mois decembre = new Mois(31, 12, 2022, 3);
+        Mois janvier = new Mois(31, 12, 2023, 2);
         Jour j1 = new Jour(true, 6, 11, 2022);
         Evenement karaoke = new Evenement(18, 2, "Karaoke", "Amphi 210", "Karaoke organisé par le Club Chorale", 5);
-        Jour j2 = new Jour(true, 9, 11, 2022);
+        Jour j2 = new Jour(true, 17, 11, 2022);
         Evenement jpo = new Evenement(13, 4, "JPO", "ESIEE", "JPO", 0);
         Jour j3 = new Jour(true, 14, 12, 2022);
         Evenement blindtest = new Evenement(19, 1, "BlindTest", "Foyer", "Blindtest organisé au foyer", 0);
@@ -35,5 +38,43 @@ public class ListeMois{
 
     public static ArrayList<Mois> getDatalist() {
         return listeMois;
+    }
+
+    public Jour getNextDay(){
+        int jourActuel;
+        int moisActuel;
+        int anneeActuel;
+        int nextEvent=1;
+        ArrayList<Integer> listeEvents;
+        int m=0, j=0;
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        jourActuel = Integer.parseInt(date.substring(0, 2));
+        moisActuel = Integer.parseInt(date.substring(3, 5));
+        moisActuel = Integer.parseInt(date.substring(6, 10));
+
+        m=0; j=0;
+
+
+
+        listeEvents = listeMois.get(moisActuel-11).getListeEvents();
+        while (listeEvents.get(j)<jourActuel){
+            j=j+1;
+            nextEvent = listeEvents.get(j);
+        }
+        /*boolean b=false;
+
+        while (b==false) {
+            listeMois.size();m+ +
+            int j=0;
+            while()int j=0;j< listeMois.get(m).getListeEvents().size(); j++){
+                if(j)
+            }*/
+        return listeMois.get(moisActuel).getListeJours().get(nextEvent);
+
+
     }
 }

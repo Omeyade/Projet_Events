@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener, JourFragment.OnItemClickListener {
     //Button boutonMois;
 
 
@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         setContentView(R.layout.activity_main);
 
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
-        SemaineFragment semaineFragment = new SemaineFragment();
+        MoisFragment moisFragment = new MoisFragment();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.main_fragment_layout, semaineFragment)
+                .add(R.id.main_fragment_layout, moisFragment)
                 .add(R.id.menu_fragment_layout, bottomMenuFragment)
                 .commit();
 
@@ -36,32 +36,30 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
     //@Override // for nested class ListFragment.onItemClickListener
     public void onItemSelectedBottom(int position) {
-        // Create a Toast that displays the position that was clicked
-        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
         // Replace the current fragment with a new one
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
         SemaineFragment semaineFragment = new SemaineFragment();
+        JourFragment jourFragment = new JourFragment();
         MoisFragment moisFragment = new MoisFragment();
         ReglagesFragment reglagesFragment = new ReglagesFragment();
 
+        ListeMois listeMois = new ListeMois();
 
         if(position==1){
+            //Toast.makeText(this, "Position clicked = " + String.valueOf(listeMois.getNextDay()), Toast.LENGTH_SHORT).show();
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_fragment_layout, semaineFragment)
-                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
+                    .replace(R.id.main_fragment_layout, jourFragment)
                     .commit();
         }
         else if(position==2){
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_layout, moisFragment)
-                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
                     .commit();
         }
         else if(position==3){
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_layout, reglagesFragment)
-                    //.add(R.id.main_fragment_layout, bottomMenuFragment)
                     .commit();
         }
     }
@@ -75,19 +73,41 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
         // Replace the current fragment with a new one
-        BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
+        //BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
         JourFragment jourFragment = new JourFragment();
 
         for(int k=0; k<taille; k++){
             if(position== dayEvent.get(k)){
                 b.putString("dayEvent", String.valueOf(position));
                 b.putString("monthEvent", String.valueOf(11));
+                b.putString("yearEvent", String.valueOf(2022));
                 jourFragment.setArguments(b);
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.main_fragment_layout, jourFragment)
                         .commit();
             }
         }
+
+    }
+
+    public void onItemSelectedEvent(int position, String jour) {
+        // Create a Toast that displays the position that was clicked
+        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+
+        Bundle b = new Bundle();
+
+        // Replace the current fragment with a new one
+        EvenementFragment evenementFragment = new EvenementFragment();
+
+        b.putString("event", String.valueOf(position));
+        b.putString("dayEvent", jour);
+        b.putString("monthEvent", String.valueOf(11));
+        b.putString("yearEvent", String.valueOf(2022));
+        evenementFragment.setArguments(b);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_fragment_layout, evenementFragment)
+                .commit();
 
     }
 }

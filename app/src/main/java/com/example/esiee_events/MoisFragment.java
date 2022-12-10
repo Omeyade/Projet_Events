@@ -90,7 +90,16 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         ListeMois listeMois = new ListeMois();
         Mois mois = listeMois.getDatalist().get(0);
         ArrayList<String> Annee = new ArrayList<String>(12){{
-            for(int i=0; i<10; i++) add("");
+            add("Janvier");
+            add("Fevrier");
+            add("Mars");
+            add("Avril");
+            add("Mai");
+            add("Juin");
+            add("Juillet");
+            add("Aout");
+            add("Septembre");
+            add("Octobre");
             add("Novembre");
             add("Decembre");
         }};
@@ -112,8 +121,6 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
         //Afficher le calendrier
-        //ArrayAdapter<String> arrayAdapter
-                //= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,numerosMois );
         ArrayAdapter<String> arrayAdapter
                 = new ArrayAdapter<String>(getActivity(), R.layout.grid_view_item_1,numerosMois );
 
@@ -123,10 +130,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 callback.onItemSelectedJour(i, mois.getListeEvents());
             }
-            /*@Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-            }*/
         });
         gridView.getViewTreeObserver().addOnGlobalLayoutListener(
         new ViewTreeObserver.OnGlobalLayoutListener() {
