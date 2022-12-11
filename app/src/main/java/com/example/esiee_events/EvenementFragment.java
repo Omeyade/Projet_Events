@@ -67,7 +67,7 @@ public class EvenementFragment extends Fragment {
         day = Integer.parseInt(getArguments().getString("dayEvent"));
 
         ListeMois listeMois = new ListeMois();
-        Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent"))-11);
+        Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent")));
         ArrayList <Jour> listeJours = mois.getListeJours();
         Jour jour = listeJours.get(Integer.parseInt(getArguments().getString("dayEvent")));
         Evenement evenement = jour.getEvent().get(Integer.parseInt(getArguments().getString("event")));

@@ -96,25 +96,27 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
         moisActuel = Annee.get(Integer.parseInt(date.substring(3, 5))-1);
         anneeActuelle = date.substring(6, 10);*/
 
-        int moisVal;
+        /*int moisVal;
         if(Integer.parseInt(getArguments().getString("monthEvent"))<=12){
             moisVal=Integer.parseInt(getArguments().getString("monthEvent"))-1;
         }
         else{
             moisVal=Integer.parseInt(getArguments().getString("monthEvent"))%12-1;
-        }
+        }*/
 
-        jourAffiche = getArguments().getString("dayEvent");
-        moisAffiche = Annee.get(moisVal);
-        anneeAffiche = getArguments().getString("yearEvent");
+
 
 
         ArrayList<String> listeEvents = new ArrayList<>();
         View myView = inflater.inflate(R.layout.fragment_jour, container, false);
         ListeMois listeMois = new ListeMois();
-        Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent"))-11);
+        Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent")));
         ArrayList<Jour> listeJours = mois.getListeJours();
         Jour j1 = listeJours.get(Integer.parseInt(getArguments().getString("dayEvent")));
+
+        jourAffiche = getArguments().getString("dayEvent");
+        moisAffiche = Annee.get(mois.getNumeroMois()-1);
+        anneeAffiche = getArguments().getString("yearEvent");
 
         for(int k=0; k<j1.getEvent().size(); k++){
             listeEvents.add(j1.getEvent().get(k).getNom());

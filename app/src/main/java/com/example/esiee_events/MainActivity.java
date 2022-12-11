@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         int moisActuel = Integer.parseInt(date.substring(3, 5));
         int anneeActuel = Integer.parseInt(date.substring(6, 10));
 
+        displayMonth = Integer.parseInt(date.substring(3, 5))-11;
+
         int m=0; int j=0;
 
         // Replace the current fragment with a new one
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         boolean thisMonth=true;
         boolean found=false;
         int nextDay=0;
-        int nextMonth=moisActuel;
+        int nextMonth=moisActuel-11;
         int nextYear=anneeActuel;
 
         ListeMois listeMois = new ListeMois();
@@ -111,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
             }
         }
 
-       //nextMonth = nextMonth%12;
-
 
         if(position==1){
             //Toast.makeText(this, "Position clicked = " + next, Toast.LENGTH_SHORT).show();
@@ -125,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
                     .commit();
         }
         else if(position==2){
+            b.putString("displayMonth", String.valueOf(displayMonth));
+            moisFragment.setArguments(b);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_layout, moisFragment)
                     .commit();
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         }
     }
 
-    public void onItemSelectedJour(int position, ArrayList<Integer> dayEvent) {
+    public void onItemSelectedJour(int position, ArrayList<Integer> dayEvent, int mois) {
         Bundle b = new Bundle();
         int taille=dayEvent.size();
 
@@ -160,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         for(int k=0; k<taille; k++){
             if(position== dayEvent.get(k)){
                 b.putString("dayEvent", String.valueOf(position));
-                b.putString("monthEvent", String.valueOf(moisActuel));
+                b.putString("monthEvent", String.valueOf(mois));
                 b.putString("yearEvent", String.valueOf(2022));
                 jourFragment.setArguments(b);
                 getSupportFragmentManager().beginTransaction()

@@ -52,7 +52,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
     interface OnItemClickListener {
-        void onItemSelectedJour(int position, ArrayList<Integer> dayEvent);
+        void onItemSelectedJour(int position, ArrayList<Integer> dayEvent, int mois);
     }
     interface OnButtonClickListener {
         void onItemSelectedButton(int position);
@@ -160,7 +160,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                callback1.onItemSelectedJour(i-mois.getPremierJour()+1, mois.getListeEvents());
+                callback1.onItemSelectedJour(i-mois.getPremierJour()+1, mois.getListeEvents(), Integer.parseInt(getArguments().getString("displayMonth")));
             }
 
         });
