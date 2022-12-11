@@ -83,12 +83,14 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         }
         String date = sdf.format(System.currentTimeMillis());
         jourActuel = Integer.parseInt(date.substring(0, 2));
+        moisActuel = Integer.parseInt(date.substring(3, 5));
 
 
         View myView = inflater.inflate(R.layout.fragment_mois, container, false);
         this.gridView = (GridView)myView.findViewById(R.id.gridView);
         ListeMois listeMois = new ListeMois();
-        Mois mois = listeMois.getDatalist().get(0);
+        //Mois mois = listeMois.getDatalist().get(0);
+        Mois mois = listeMois.getDatalist().get(moisActuel-11);
         ArrayList<String> Annee = new ArrayList<String>(12){{
             add("Janvier");
             add("Fevrier");
@@ -115,7 +117,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         for(int k=0; k<mois.getPremierJour(); k++){
             numerosMois.add("");
         }
-        for(int k=0; k<=mois.getTailleMois();k++){
+        for(int k=0; k<mois.getTailleMois();k++){
             numerosMois.add(String.valueOf(k+1));
         }
 
@@ -128,7 +130,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                callback.onItemSelectedJour(i, mois.getListeEvents());
+                callback.onItemSelectedJour(i-mois.getPremierJour()+1, mois.getListeEvents());
             }
 
         });
@@ -140,19 +142,19 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
                 for (int k = 0; k < mois.tailleMois; k++) {
                     if (k==jourActuel) {
                         //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
-                        gridView.getChildAt(k).setBackgroundColor(0xFFBEC1E9);
+                        gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFBEC1E9);
                         //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
                     if (mois.getListeJours().get(k).isEvent()) {
                         //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
-                        gridView.getChildAt(k).setBackgroundColor(0xFF0000FF);
+                        gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFF0000FF);
                         //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
                     if (mois.getListeJours().get(k).isEvent() && k==jourActuel) {
                         //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
-                        gridView.getChildAt(k).setBackgroundColor(0xFFA526A8);
+                        gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFA526A8);
                         //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }

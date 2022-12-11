@@ -1,6 +1,10 @@
 package com.example.esiee_events;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Mois {
     ArrayList<Jour> listeJours = new ArrayList<>(31);
@@ -41,6 +45,7 @@ public class Mois {
     }
 
     public ArrayList<Integer> getListeEvents(){
+        Collections.sort(listeEvents);
         return listeEvents;
     }
 

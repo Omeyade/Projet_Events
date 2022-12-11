@@ -73,9 +73,18 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ArrayList<String> Annee = new ArrayList<String>(12){{
-            for(int i=0; i<10; i++) add("");
+            add("Janvier");
+            add("Fevrier");
+            add("Mars");
+            add("Avril");
+            add("Mai");
+            add("Juin");
+            add("Juillet");
+            add("Aout");
+            add("Septembre");
+            add("Octobre");
             add("Novembre");
-            add("Décembre");
+            add("Decembre");
         }};
 
         SimpleDateFormat sdf = null;
@@ -88,7 +97,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
         anneeActuelle = date.substring(6, 10);*/
 
         jourAffiche = getArguments().getString("dayEvent");
-        moisAffiche = Annee.get(Integer.parseInt(getArguments().getString("monthEvent")));
+        moisAffiche = Annee.get(Integer.parseInt(getArguments().getString("monthEvent"))-1);
         anneeAffiche = getArguments().getString("yearEvent");
 
 

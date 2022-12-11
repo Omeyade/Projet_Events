@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,18 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
     //@Override // for nested class ListFragment.onItemClickListener
     public void onItemSelectedBottom(int position) {
+        Bundle b = new Bundle();
+
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        int jourActuel = Integer.parseInt(date.substring(0, 2));
+        int moisActuel = Integer.parseInt(date.substring(3, 5));
+        int anneeActuel = Integer.parseInt(date.substring(6, 10));
+
+        int m=0; int j=0;
 
         // Replace the current fragment with a new one
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
@@ -44,10 +57,57 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         MoisFragment moisFragment = new MoisFragment();
         ReglagesFragment reglagesFragment = new ReglagesFragment();
 
+        boolean thisMonth=true;
+        boolean found=false;
+        int nextDay=0;
+        int nextMonth=moisActuel;
+        int nextYear=anneeActuel;
+
         ListeMois listeMois = new ListeMois();
+        //ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-11).getListeEvents();
+        ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-11).getListeEvents();
+
+
+
+        if(listeEvents.size()==0){
+            thisMonth=false;
+        }
+        else{
+            for(j=0;j<listeEvents.size() && !found;j++) {
+                if (listeEvents.get(j) <= jourActuel) {
+                    nextDay = listeEvents.get(j);
+                } else {
+                    nextDay = listeEvents.get(j);
+                    found = true;
+                }
+            }
+        }
+
+
+
+       if(thisMonth==false){
+           thisMonth=true;
+            for (m=moisActuel-10;m<listeMois.getDatalist().size() && thisMonth;m++){
+                nextMonth = nextMonth+1;
+                listeEvents = listeMois.getDatalist().get(m).getListeEvents();
+                if(listeEvents.size()>0){
+                    nextDay=listeEvents.get(0);
+                    nextYear=listeMois.getDatalist().get(m).getAnnee();
+                    thisMonth=false;
+
+                }
+            }
+        }
+
+       //nextMonth = nextMonth%12;
+
 
         if(position==1){
-            //Toast.makeText(this, "Position clicked = " + String.valueOf(listeMois.getNextDay()), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Position clicked = " + next, Toast.LENGTH_SHORT).show();
+            b.putString("dayEvent", String.valueOf(nextDay));
+            b.putString("monthEvent", String.valueOf(nextMonth));
+            b.putString("yearEvent", String.valueOf(nextYear));
+            jourFragment.setArguments(b);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_layout, jourFragment)
                     .commit();
@@ -68,6 +128,15 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         Bundle b = new Bundle();
         int taille=dayEvent.size();
 
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        int jourActuel = Integer.parseInt(date.substring(0, 2));
+        int moisActuel = Integer.parseInt(date.substring(3, 5));
+        int anneeActuel = Integer.parseInt(date.substring(6, 10));
+
         //int dayEvent=mois.getListeEvents().get(0);
         // Create a Toast that displays the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
@@ -79,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         for(int k=0; k<taille; k++){
             if(position== dayEvent.get(k)){
                 b.putString("dayEvent", String.valueOf(position));
-                b.putString("monthEvent", String.valueOf(11));
+                b.putString("monthEvent", String.valueOf(moisActuel));
                 b.putString("yearEvent", String.valueOf(2022));
                 jourFragment.setArguments(b);
                 getSupportFragmentManager().beginTransaction()
@@ -96,12 +165,21 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
         Bundle b = new Bundle();
 
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        int jourActuel = Integer.parseInt(date.substring(0, 2));
+        int moisActuel = Integer.parseInt(date.substring(3, 5));
+        int anneeActuel = Integer.parseInt(date.substring(6, 10));
+
         // Replace the current fragment with a new one
         EvenementFragment evenementFragment = new EvenementFragment();
 
         b.putString("event", String.valueOf(position));
         b.putString("dayEvent", jour);
-        b.putString("monthEvent", String.valueOf(11));
+        b.putString("monthEvent", String.valueOf(12));
         b.putString("yearEvent", String.valueOf(2022));
         evenementFragment.setArguments(b);
 
