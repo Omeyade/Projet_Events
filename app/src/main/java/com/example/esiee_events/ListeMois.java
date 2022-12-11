@@ -5,11 +5,12 @@ import android.icu.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ListeMois{
-    static ArrayList<Mois> listeMois = new ArrayList<>(2);
+    static ArrayList<Mois> listeMois = new ArrayList<>();
 
     //creation d'un mois pour le test
 
     public ListeMois(){
+
         Mois novembre = new Mois(30, 11, 2022, 1);
         Mois decembre = new Mois(31, 12, 2022, 3);
         Mois janvier = new Mois(31, 01, 2023, 2);
@@ -18,20 +19,23 @@ public class ListeMois{
         Evenement karaoke = new Evenement(18, 2, "Karaoke", "Amphi 210", "Karaoke organisé par le Club Chorale", 5);
         Jour j2 = new Jour(true, 5, 11, 2022);
         Evenement jpo = new Evenement(13, 4, "JPO", "ESIEE", "JPO", 0);
-        Jour j3 = new Jour(true, 14, 12, 2022);
+        Jour j3 = new Jour(true, 9, 12, 2022);
         Evenement blindtest = new Evenement(19, 1, "BlindTest", "Foyer", "Blindtest organisé au foyer", 0);
+        Jour j4 = new Jour(true, 10, 1, 2022);
+        Evenement rentree = new Evenement(8, 4, "Rentrée", "ESIEE", "RENTREE", 0);
 
         //ajouter l'evenement au jour
         j1.setEvent(karaoke);
         j1.setEvent(jpo);
         j2.setEvent(jpo);
         j3.setEvent(blindtest);
+        j4.setEvent(rentree);
 
         //ajouter l'evenement au mois
         novembre.setJour(j1.getJour(), j1);
         decembre.setJour(j2.getJour(), j2);
         decembre.setJour(j3.getJour(), j3);
-        //janvier.setJour(j2.getJour(), j2);
+        janvier.setJour(j4.getJour(), j4);
 
         listeMois.add(novembre);
         listeMois.add(decembre);

@@ -33,7 +33,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
     }
 
     interface OnItemClickListener {
-        void onItemSelectedEvent(int position, String  jour);
+        void onItemSelectedEvent(int position, String  jour, String mois);
     }
 
     private JourFragment.OnItemClickListener callback;
@@ -96,8 +96,16 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
         moisActuel = Annee.get(Integer.parseInt(date.substring(3, 5))-1);
         anneeActuelle = date.substring(6, 10);*/
 
+        int moisVal;
+        if(Integer.parseInt(getArguments().getString("monthEvent"))<=12){
+            moisVal=Integer.parseInt(getArguments().getString("monthEvent"))-1;
+        }
+        else{
+            moisVal=Integer.parseInt(getArguments().getString("monthEvent"))%12-1;
+        }
+
         jourAffiche = getArguments().getString("dayEvent");
-        moisAffiche = Annee.get(Integer.parseInt(getArguments().getString("monthEvent"))-1);
+        moisAffiche = Annee.get(moisVal);
         anneeAffiche = getArguments().getString("yearEvent");
 
 
@@ -120,7 +128,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                callback.onItemSelectedEvent(i, getArguments().getString("dayEvent"));
+                callback.onItemSelectedEvent(i, getArguments().getString("dayEvent"), getArguments().getString("monthEvent"));
             }
 
         });

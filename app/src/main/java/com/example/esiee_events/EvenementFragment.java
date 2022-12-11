@@ -75,17 +75,17 @@ public class EvenementFragment extends Fragment {
         TextView nomEvent = (TextView)myView.findViewById(R.id.Nom_Event);
         nomEvent.setText(evenement.getNom());
 
-        /*TextView dateHeureDetail = (TextView)myView.findViewById(R.id.Date_et_Heure_detail);
-        dateHeureDetail.setText("Le "+jour.getJour()+"/"+jour.getMois()+"/"+jour.getAnnee()+", à "+jour.getHeure()+"H");
+        TextView dateHeureDetail = (TextView)myView.findViewById(R.id.Date_et_Heure_detail);
+        dateHeureDetail.setText("Le "+jour.getJour()+"/"+jour.getMois()+"/"+jour.getAnnee()+", à "+evenement.getHeure()+"H");
 
         TextView localisationDetail = (TextView)myView.findViewById(R.id.Localisation_detail);
-        localisationDetail.setText(jour.getLieu());
+        localisationDetail.setText(evenement.getLieu());
 
         TextView commentairesDetail = (TextView)myView.findViewById(R.id.Commentaires_detail);
-        commentairesDetail.setText(jour.getCommentaire());
+        commentairesDetail.setText(evenement.getCommentaire());
 
         TextView prixDetail = (TextView)myView.findViewById(R.id.Prix_detail);
-        float prix=jour.getPrix();
+        float prix=evenement.getPrix();
         if (prix>0){
             prixDetail.setText(prix+"€");
         }
@@ -94,7 +94,7 @@ public class EvenementFragment extends Fragment {
         }
 
 
-        Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();*/
+        //Toast.makeText(getActivity(), listeJours.get(Integer.parseInt(getArguments().getString("dayEvent"))).getNom(), Toast.LENGTH_SHORT).show();
         return myView;
     }
 }

@@ -12,19 +12,30 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener, JourFragment.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements BottomMenuFragment.OnItemClickListener,MoisFragment.OnItemClickListener, MoisFragment.OnButtonClickListener, JourFragment.OnItemClickListener {
     //Button boutonMois;
-
-
+    int displayMonth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle b = new Bundle();
+        SimpleDateFormat sdf = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
+        }
+        String date = sdf.format(System.currentTimeMillis());
+        displayMonth = Integer.parseInt(date.substring(3, 5))-11;
+
+
         setContentView(R.layout.activity_main);
 
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
         MoisFragment moisFragment = new MoisFragment();
+
+        b.putString("displayMonth", String.valueOf(displayMonth));
+        moisFragment.setArguments(b);
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_fragment_layout, moisFragment)
@@ -75,12 +86,13 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         else{
             for(j=0;j<listeEvents.size() && !found;j++) {
                 if (listeEvents.get(j) <= jourActuel) {
-                    nextDay = listeEvents.get(j);
+                    nextDay = 0;
                 } else {
                     nextDay = listeEvents.get(j);
                     found = true;
                 }
             }
+            if(nextDay==0){thisMonth=false;}
         }
 
 
@@ -159,7 +171,38 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
     }
 
-    public void onItemSelectedEvent(int position, String jour) {
+    public void onItemSelectedButton(int position) {
+        Bundle b = new Bundle();
+
+        //ListeMois listeMois = new ListeMois();
+        int tailleListe=4;
+
+
+
+        if(position==1){
+            if(displayMonth>0){displayMonth=displayMonth-1;}
+            else {displayMonth=0;}
+        }
+        if(position==2){
+            if(displayMonth<tailleListe-1){displayMonth=displayMonth+1;}
+            else{displayMonth=tailleListe-1;}
+        }
+
+        Toast.makeText(this, "Position clicked = " + displayMonth, Toast.LENGTH_SHORT).show();
+
+        MoisFragment moisFragment = new MoisFragment();
+
+        b.putString("displayMonth", String.valueOf(displayMonth));
+        moisFragment.setArguments(b);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_fragment_layout, moisFragment)
+                .commit();
+
+
+
+    }
+
+    public void onItemSelectedEvent(int position, String jour, String mois) {
         // Create a Toast that displays the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
@@ -179,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
         b.putString("event", String.valueOf(position));
         b.putString("dayEvent", jour);
-        b.putString("monthEvent", String.valueOf(12));
+        b.putString("monthEvent", mois);
         b.putString("yearEvent", String.valueOf(2022));
         evenementFragment.setArguments(b);
 

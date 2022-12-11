@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,12 +25,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MoisFragment extends Fragment implements AdapterView.OnItemClickListener{
+public class MoisFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private GridView gridView;
+    Button previousMonth;
+    Button nextMonth;
     int jourActuel;
     int moisActuel;
 
@@ -42,12 +45,21 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
+
 
     interface OnItemClickListener {
         void onItemSelectedJour(int position, ArrayList<Integer> dayEvent);
     }
+    interface OnButtonClickListener {
+        void onItemSelectedButton(int position);
+    }
 
-    private MoisFragment.OnItemClickListener callback;
+    private MoisFragment.OnItemClickListener callback1;
+    private MoisFragment.OnButtonClickListener callback2;
 
     public MoisFragment() {
         // Required empty public constructor
@@ -58,7 +70,8 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         // This makes sure that the host activity has implemented the callback interface
         // If not, it throws an exception
         try {
-            callback = (MoisFragment.OnItemClickListener) context;
+            callback1 = (MoisFragment.OnItemClickListener) context;
+            callback2 = (MoisFragment.OnButtonClickListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnItemClickListener");
         }
@@ -87,10 +100,28 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
         View myView = inflater.inflate(R.layout.fragment_mois, container, false);
+
+        nextMonth = (Button) myView.findViewById(R.id.Next_month);
+        nextMonth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callback2.onItemSelectedButton(2);
+
+            }
+        });
+
+        previousMonth = (Button) myView.findViewById(R.id.Previous_month);
+        previousMonth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callback2.onItemSelectedButton(1);
+
+            }
+        });
+
         this.gridView = (GridView)myView.findViewById(R.id.gridView);
         ListeMois listeMois = new ListeMois();
-        //Mois mois = listeMois.getDatalist().get(0);
-        Mois mois = listeMois.getDatalist().get(moisActuel-11);
+        Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("displayMonth")));
         ArrayList<String> Annee = new ArrayList<String>(12){{
             add("Janvier");
             add("Fevrier");
@@ -110,7 +141,6 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         nomMois.setText(Annee.get(mois.getNumeroMois()-1));
 
 
-        //Toast.makeText(getActivity(), mois.getListeJours().get(0).getJour(), Toast.LENGTH_SHORT).show();
 
         //tableau d'entiers pour afficher dans le calendrier
         ArrayList<String > numerosMois = new ArrayList<>(mois.getTailleMois());
@@ -130,7 +160,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                callback.onItemSelectedJour(i-mois.getPremierJour()+1, mois.getListeEvents());
+                callback1.onItemSelectedJour(i-mois.getPremierJour()+1, mois.getListeEvents());
             }
 
         });
@@ -140,22 +170,16 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             public void onGlobalLayout() {
                 //Changer la couleur de l'element si il y a un evenement ce jour là
                 for (int k = 0; k < mois.tailleMois; k++) {
-                    if (k==jourActuel) {
-                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                    if (k==jourActuel && mois.getNumeroMois()==moisActuel) {
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFBEC1E9);
-                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
                     if (mois.getListeJours().get(k).isEvent()) {
-                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFF0000FF);
-                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
-                    if (mois.getListeJours().get(k).isEvent() && k==jourActuel) {
-                        //gridView.getChildAt(k).setBackgroundColor(Color.parseColor("#18A608"));
+                    if (mois.getListeJours().get(k).isEvent() && k==jourActuel && mois.getNumeroMois()==moisActuel) {
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFA526A8);
-                        //Toast.makeText(getActivity(), Novembre.get(k).getNom(), Toast.LENGTH_SHORT).show();
 
                     }
                 }
