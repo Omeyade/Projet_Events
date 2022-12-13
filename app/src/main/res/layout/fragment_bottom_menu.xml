@@ -11,14 +11,16 @@
     <!-- display two Button's and a FrameLayout to replace the Fragment's  -->
 
     <Button
-        android:id="@+id/Semaine"
+        android:id="@+id/Jour"
+        android:tint="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:backgroundTint="@color/pastel_blue"
         android:layout_weight="1"
-        android:drawableTop="@drawable/ic_baseline_calendar_view_week_24"
+        android:drawableTop="@drawable/ic_baseline_event_24"
         android:paddingTop="10dp"
-        android:text="Semaine"
+        android:text="Prochain"
+        android:textColor="@color/white"
         style="?android:attr/borderlessButtonStyle"/>
 
     <Button
@@ -30,6 +32,7 @@
         android:drawableTop="@drawable/ic_baseline_calendar_month_24"
         android:paddingTop="10dp"
         android:text="Mois"
+        android:textColor="@color/white"
         style="?android:attr/borderlessButtonStyle"/>
 
     <Button
@@ -41,6 +44,7 @@
         android:drawableTop="@drawable/ic_baseline_settings_24"
         android:paddingTop="10dp"
         android:text="Réglages"
+        android:textColor="@color/white"
         style="?android:attr/borderlessButtonStyle"/>
 
 

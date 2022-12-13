@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
             sdf = new SimpleDateFormat("dd/MM/yyyy");
         }
         String date = sdf.format(System.currentTimeMillis());
-        displayMonth = Integer.parseInt(date.substring(3, 5))-11;
+        displayMonth = Integer.parseInt(date.substring(3, 5))-10;
 
 
         setContentView(R.layout.activity_main);
@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         int moisActuel = Integer.parseInt(date.substring(3, 5));
         int anneeActuel = Integer.parseInt(date.substring(6, 10));
 
-        displayMonth = Integer.parseInt(date.substring(3, 5))-11;
 
         int m=0; int j=0;
 
@@ -73,12 +72,12 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         boolean thisMonth=true;
         boolean found=false;
         int nextDay=0;
-        int nextMonth=moisActuel-11;
+        int nextMonth=moisActuel-10;
         int nextYear=anneeActuel;
 
         ListeMois listeMois = new ListeMois();
-        //ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-11).getListeEvents();
-        ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-11).getListeEvents();
+        //ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-10).getListeEvents();
+        ArrayList<Integer> listeEvents = listeMois.getDatalist().get(moisActuel-10).getListeEvents();
 
 
 
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
        if(thisMonth==false){
            thisMonth=true;
-            for (m=moisActuel-10;m<listeMois.getDatalist().size() && thisMonth;m++){
+            for (m=moisActuel-9;m<listeMois.getDatalist().size() && thisMonth;m++){
                 nextMonth = nextMonth+1;
                 listeEvents = listeMois.getDatalist().get(m).getListeEvents();
                 if(listeEvents.size()>0){
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
 
         if(position==1){
-            //Toast.makeText(this, "Position clicked = " + next, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Position clicked = " + nextMonth, Toast.LENGTH_SHORT).show();
             b.putString("dayEvent", String.valueOf(nextDay));
             b.putString("monthEvent", String.valueOf(nextMonth));
             b.putString("yearEvent", String.valueOf(nextYear));
@@ -177,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
         Bundle b = new Bundle();
 
         //ListeMois listeMois = new ListeMois();
-        int tailleListe=4;
+        int tailleListe=5;
 
 
 

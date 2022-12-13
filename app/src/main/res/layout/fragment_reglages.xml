@@ -28,6 +28,14 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/white"
             android:textSize="35dp"/>
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
 
     </FrameLayout>
@@ -102,14 +110,7 @@
             android:textOff="OFF"
             android:textOn="ON"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/Test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
+
     </FrameLayout>
     <FrameLayout
         android:id="@+id/Apropos"
@@ -146,8 +147,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="27dp"
             android:textStyle="italic"
-            android:text=" L'application Event ESIEE a pour but de réunir l'ensemble des informations concernant les évènements associatifs de l'école.
-            Plus besoin de chercher : elles sont désormais entre vos mains dès que vous le souahitez !"
+            android:text=" L'application Event ESIEE a pour but de réunir l'ensemble des informations concernant les évènements associatifs de l'école. Plus besoin de chercher : elles sont désormais entre vos mains dès que vous le souahitez !"
             android:textColor="@color/white"
             android:textSize="14dp" />
 

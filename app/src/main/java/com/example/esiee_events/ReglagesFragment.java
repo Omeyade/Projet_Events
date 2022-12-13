@@ -23,7 +23,7 @@ import android.widget.Toast;
 public class ReglagesFragment extends Fragment {
     EditText mEditText;
     String text;
-    TextView Test;
+    TextView Name;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +33,7 @@ public class ReglagesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public ReglagesFragment() {
         // Required empty public constructor
@@ -69,8 +70,13 @@ public class ReglagesFragment extends Fragment {
         @Override
         public void afterTextChanged(Editable editable) {
             Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+            if(text==null){
+                Name.setText("Hello !");
+            }
+            else{
+                Name.setText("Hello " +text+" !");
+            }
 
-            Test.setText(text);
 
         }
     };
@@ -83,11 +89,15 @@ public class ReglagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View myView = inflater.inflate(R.layout.fragment_reglages, container, false);
 
         mEditText = myView.findViewById(R.id.Nom_Utilisateur);
-        Test = myView.findViewById(R.id.Test);
+        Name = myView.findViewById(R.id.Name);
         mEditText.addTextChangedListener(textWatcher);
+
+
+
 
         // Inflate the layout for this fragment
         return myView;

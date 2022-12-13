@@ -4,48 +4,52 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\layout\\fragment_evenement.xml"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_previous.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_previous.png"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_settings_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_settings_24.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_club.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_club.png"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_settings_24.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_settings_24.png"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_previous.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_previous.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_time.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_time.png"
-    },
-    {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_date.xml.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_apropos.xml.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_apropos.xml"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_apropos.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_apropos.png"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_apropos.xml.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_apropos.xml"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_date.xml.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_time.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_time.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_jour.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_bottom_menu.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\layout\\fragment_bottom_menu.xml"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_participation.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xhdpi\\ic_participation.png"
-    },
-    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_reglages.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\layout\\fragment_reglages.xml"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_participation.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xhdpi\\ic_participation.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_settings_24.png.flat",
@@ -62,6 +66,10 @@
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_notifications.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_notifications.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_event_24.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_calendar_view_week_24.png.flat",
@@ -172,6 +180,10 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xxhdpi\\ic_time.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xxhdpi\\ic_jour.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_club.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xxhdpi\\ic_club.png"
     },
@@ -260,12 +272,20 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xhdpi\\ic_localisation.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xhdpi\\ic_jour.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_commentaires.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_commentaires.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_event_24.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_date.png.flat",
@@ -290,6 +310,10 @@
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_club.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_club.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_jour.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_participation.png.flat",
@@ -328,6 +352,14 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_next.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_event_24.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_event_24.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_time.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_time.png"
     },
@@ -364,6 +396,10 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_prix.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_jour.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_calendar_month_24.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_calendar_month_24.png"
     },
@@ -378,6 +414,10 @@
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_time.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_time.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_event_24.xml.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_event_24.xml"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -428,6 +468,10 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_next.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_jour.xml.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_jour.xml"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_time.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_time.xml"
     },
@@ -456,6 +500,10 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_profil.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_jour.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_localisation.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_localisation.png"
     },
@@ -480,8 +528,16 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_event_24.png"
+    },
+    {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_previous.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-xxhdpi\\ic_previous.png"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_event_24.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_event_24.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_settings_24.png.flat",

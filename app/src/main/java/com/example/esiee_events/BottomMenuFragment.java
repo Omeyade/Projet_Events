@@ -43,7 +43,7 @@ public class BottomMenuFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
         View myView = inflater.inflate(R.layout.fragment_bottom_menu, container, false);
-        boutonSemaine = (Button) myView.findViewById(R.id.Semaine);
+        boutonSemaine = (Button) myView.findViewById(R.id.Jour);
         boutonSemaine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

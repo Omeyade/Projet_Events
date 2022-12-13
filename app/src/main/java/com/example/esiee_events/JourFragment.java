@@ -72,6 +72,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         ArrayList<String> Annee = new ArrayList<String>(12){{
             add("Janvier");
             add("Fevrier");
@@ -139,6 +140,8 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
         dateJour.setText(jourAffiche);
         TextView dateMoisAnnee = (TextView)myView.findViewById(R.id.mois_annee_actuel);
         dateMoisAnnee.setText(moisAffiche+" "+anneeAffiche);
+        //TextView userName = (TextView)myView.findViewById(R.id.user_name);
+        //userName.setText(getArguments().getString("Name"));
 
 
 
