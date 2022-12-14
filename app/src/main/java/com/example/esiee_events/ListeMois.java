@@ -14,7 +14,7 @@ public class ListeMois{
         Mois octobre = new Mois(31, 10, 2022, 5);
         Mois novembre = new Mois(30, 11, 2022, 1);
         Mois decembre = new Mois(31, 12, 2022, 3);
-        Mois janvier = new Mois(31, 01, 2023, 2);
+        Mois janvier = new Mois(31, 01, 2023, 6);
         Mois fevrier = new Mois(28, 02, 2023, 2);
 
         Jour j1 = new Jour(true, 4, 10, 2022);

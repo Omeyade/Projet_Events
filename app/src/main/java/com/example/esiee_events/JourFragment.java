@@ -117,7 +117,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
 
         jourAffiche = getArguments().getString("dayEvent");
         moisAffiche = Annee.get(mois.getNumeroMois()-1);
-        anneeAffiche = getArguments().getString("yearEvent");
+        anneeAffiche = String.valueOf(j1.getAnnee());
 
         for(int k=0; k<j1.getEvent().size(); k++){
             listeEvents.add(j1.getEvent().get(k).getNom());
