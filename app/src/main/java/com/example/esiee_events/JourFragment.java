@@ -17,11 +17,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link JourFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class JourFragment extends Fragment implements AdapterView.OnItemClickListener{
     private ListView list;
     String jourAffiche;

@@ -6,11 +6,9 @@
     android:background="@color/pastel_blue"
     tools:context=".MoisFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="350dp"
+        android:layout_height="450dp"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_marginLeft="10dp"
@@ -21,6 +19,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/Previous_month"
                 android:layout_width="wrap_content"
@@ -30,10 +29,12 @@
                 android:drawableTop="@drawable/ic_previous"
                 android:paddingTop="10dp"
                 style="?android:attr/borderlessButtonStyle"/>
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="10">
+
                 <TextView
                     android:id="@+id/Nom_Mois"
                     android:layout_width="match_parent"
@@ -41,6 +42,7 @@
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>
+
             <Button
                 android:id="@+id/Next_month"
                 android:layout_width="wrap_content"
@@ -51,14 +53,17 @@
                 android:paddingTop="10dp"
                 style="?android:attr/borderlessButtonStyle"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal" >
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                  <TextView
                      android:layout_width="match_parent"
                      android:layout_height="match_parent"
@@ -66,10 +71,12 @@
                      android:textSize="25dp"
                      android:gravity="center"/>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -77,10 +84,12 @@
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -88,10 +97,12 @@
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -104,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -111,10 +123,12 @@
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -122,10 +136,12 @@
                     android:textSize="25dp"
                     android:gravity="center"/>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -135,16 +151,11 @@
             </FrameLayout>
         </LinearLayout>
 
-
         <GridView
             android:id="@+id/gridView"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:numColumns="7"
             android:stretchMode="columnWidth" />
-
-
     </LinearLayout>
-
-
 </FrameLayout>

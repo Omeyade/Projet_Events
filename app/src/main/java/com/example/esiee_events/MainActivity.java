@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
         // Replace the current fragment with a new one
         BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
-        SemaineFragment semaineFragment = new SemaineFragment();
         JourFragment jourFragment = new JourFragment();
         MoisFragment moisFragment = new MoisFragment();
         ReglagesFragment reglagesFragment = new ReglagesFragment();
@@ -114,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
 
         if(position==1){
-            Toast.makeText(this, "Position clicked = " + nextMonth, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Position clicked = " + nextMonth, Toast.LENGTH_SHORT).show();
             b.putString("dayEvent", String.valueOf(nextDay));
             b.putString("monthEvent", String.valueOf(nextMonth));
             b.putString("yearEvent", String.valueOf(nextYear));
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
         //int dayEvent=mois.getListeEvents().get(0);
         // Create a Toast that displays the position that was clicked
-        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
         // Replace the current fragment with a new one
         //BottomMenuFragment bottomMenuFragment = new BottomMenuFragment();
@@ -189,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
             else{displayMonth=tailleListe-1;}
         }
 
-        Toast.makeText(this, "Position clicked = " + displayMonth, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Position clicked = " + displayMonth, Toast.LENGTH_SHORT).show();
 
         MoisFragment moisFragment = new MoisFragment();
 
@@ -205,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements BottomMenuFragmen
 
     public void onItemSelectedEvent(int position, String jour, String mois) {
         // Create a Toast that displays the position that was clicked
-        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
         Bundle b = new Bundle();
 

@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:background="@color/pastel_blue"
     >
+    <!-- Zone Principale-->
     <FrameLayout
         android:id="@+id/main_fragment_layout"
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
         android:layout_height="1dp"
         android:background="@color/white" />
 
-
+    <!-- Bottom Menu -->
     <FrameLayout
         android:id="@+id/menu_fragment_layout"
         android:layout_width="match_parent"

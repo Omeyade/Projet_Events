@@ -69,7 +69,7 @@ public class ReglagesFragment extends Fragment {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             if(text==null){
                 Name.setText("Hello !");
             }

@@ -20,28 +20,28 @@
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_apropos.xml.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_apropos.xml"
-    },
-    {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_apropos.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_apropos.png"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_time.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_time.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_date.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_time.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_time.png"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_apropos.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-mdpi\\ic_apropos.png"
     },
     {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_jour.png.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_jour.png"
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_apropos.xml.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_apropos.xml"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_bottom_menu.xml.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\layout\\fragment_bottom_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_jour.png.flat",
+        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\debug\\res\\drawable-hdpi\\ic_jour.png"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_reglages.xml.flat",
@@ -250,10 +250,6 @@
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_calendar_view_week_24.png.flat",
         "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_calendar_view_week_24.png"
-    },
-    {
-        "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_semaine.xml.flat",
-        "source": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\src\\main\\res\\layout\\fragment_semaine.xml"
     },
     {
         "merged": "C:\\Users\\omeya\\AndroidStudioProjects\\Projet v1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_participation.xml.flat",
