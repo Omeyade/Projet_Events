@@ -27,17 +27,11 @@ import java.util.List;
 
 public class MoisFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private GridView gridView;
     Button previousMonth;
     Button nextMonth;
     int jourActuel;
     int moisActuel;
-
-
-    // TODO: Rename and change types of parameters
 
 
     @Override
@@ -50,10 +44,12 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
 
     }
 
-
+    //L'interface permet de faire le lien entre le fragment la Main Activity
+    //Recuperer le numero du jour qui a été cliqué
     interface OnItemClickListener {
         void onItemSelectedJour(int position, ArrayList<Integer> dayEvent, int mois);
     }
+    //Recuperer si le bouton Next ou Previous a été cliqué
     interface OnButtonClickListener {
         void onItemSelectedButton(int position);
     }
@@ -64,6 +60,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
     public MoisFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -77,19 +74,10 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         }
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-
-     * @return A new instance of fragment MoisFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //Lecture de la date actuelle
         SimpleDateFormat sdf = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -98,9 +86,10 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
         jourActuel = Integer.parseInt(date.substring(0, 2));
         moisActuel = Integer.parseInt(date.substring(3, 5));
 
-
+        // On utilise inflate pour afficher le fragment dans le bon layout
         View myView = inflater.inflate(R.layout.fragment_mois, container, false);
 
+        //Si on clique sur le bouton Next Month, on renvoie la valeur 2 dans la callback
         nextMonth = (Button) myView.findViewById(R.id.Next_month);
         nextMonth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +99,7 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             }
         });
 
+        //Si on clique sur le bouton Previous Month, on renvoie la valeur 1 dans la callback
         previousMonth = (Button) myView.findViewById(R.id.Previous_month);
         previousMonth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,9 +109,13 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             }
         });
 
+
         this.gridView = (GridView)myView.findViewById(R.id.gridView);
         ListeMois listeMois = new ListeMois();
+        //On recupère le mois qui sera affiché
         Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("displayMonth")));
+
+        //Liste correspondant aux mois de l'année pour l'affichage
         ArrayList<String> Annee = new ArrayList<String>(12){{
             add("Janvier");
             add("Fevrier");
@@ -137,26 +131,28 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             add("Decembre");
         }};
 
+        //Affichage du nom du mois
         TextView nomMois = (TextView)myView.findViewById(R.id.Nom_Mois);
         nomMois.setText(Annee.get(mois.getNumeroMois()-1));
 
-
-
-        //tableau d'entiers pour afficher dans le calendrier
+        //On crée le tableau de strings qui sera affiché dans la gridView
         ArrayList<String > numerosMois = new ArrayList<>(mois.getTailleMois());
+        //On ajoute d'abord des cases vides car le premier jour du mois n'est pas forcement un lundi
         for(int k=0; k<mois.getPremierJour(); k++){
             numerosMois.add("");
         }
+        //On ajoute tous les jours du mois
         for(int k=0; k<mois.getTailleMois();k++){
             numerosMois.add(String.valueOf(k+1));
         }
 
 
-        //Afficher le calendrier
+        //Affichage de la liste des jours dans la gridView, afin de former le calendrier
         ArrayAdapter<String> arrayAdapter
                 = new ArrayAdapter<String>(getActivity(), R.layout.grid_view_item_1,numerosMois );
-
         gridView.setAdapter(arrayAdapter);
+
+        //On lit quel jour a été cliqué dessus, et cette valeur est renvoyée dans la main activity
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -164,20 +160,24 @@ public class MoisFragment extends Fragment implements AdapterView.OnItemClickLis
             }
 
         });
+
         gridView.getViewTreeObserver().addOnGlobalLayoutListener(
         new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                //Changer la couleur de l'element si il y a un evenement ce jour là
+                //Changer la couleur de l'element de la gridView
                 for (int k = 0; k < mois.tailleMois; k++) {
+                    //S'il s'agit du jour actuel, il est coloré en gris
                     if (k==jourActuel && mois.getNumeroMois()==moisActuel) {
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFBEC1E9);
 
                     }
+                    //S'il y a un évenement ce jour là, il est coloré en bleu
                     if (mois.getListeJours().get(k).isEvent()) {
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFF0000FF);
 
                     }
+                    //S'il s'agit du jour actuel et il y a un évenement ce jour là, il est coloré en rose
                     if (mois.getListeJours().get(k).isEvent() && k==jourActuel && mois.getNumeroMois()==moisActuel) {
                         gridView.getChildAt(k+mois.getPremierJour()-1).setBackgroundColor(0xFFA526A8);
 

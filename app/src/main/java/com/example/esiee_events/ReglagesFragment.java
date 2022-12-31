@@ -25,37 +25,18 @@ public class ReglagesFragment extends Fragment {
     String text;
     TextView Name;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-
     public ReglagesFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ReglagesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ReglagesFragment newInstance(String param1, String param2) {
         ReglagesFragment fragment = new ReglagesFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
+
+    //lecture du text tapé dans le EditText
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -77,7 +58,6 @@ public class ReglagesFragment extends Fragment {
                 Name.setText("Hello " +text+" !");
             }
 
-
         }
     };
 
@@ -89,15 +69,13 @@ public class ReglagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // On utilise inflate pour afficher le fragment dans le bon layout
         View myView = inflater.inflate(R.layout.fragment_reglages, container, false);
 
+        //Afichage du Nom tapé dans le Edit Text
         mEditText = myView.findViewById(R.id.Nom_Utilisateur);
         Name = myView.findViewById(R.id.Name);
         mEditText.addTextChangedListener(textWatcher);
-
-
-
 
         // Inflate the layout for this fragment
         return myView;

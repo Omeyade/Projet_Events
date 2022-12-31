@@ -23,17 +23,16 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
     String  moisAffiche;
     String  anneeAffiche;
 
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-    }
-
+    //L'interface permet de faire le lien entre le fragment la Main Activity
     interface OnItemClickListener {
         void onItemSelectedEvent(int position, String  jour, String mois);
     }
 
     private JourFragment.OnItemClickListener callback;
 
-
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+    }
 
 
     public JourFragment() {
@@ -67,7 +66,7 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //Liste correspondant aux mois de l'année pour l'affichage
         ArrayList<String> Annee = new ArrayList<String>(12){{
             add("Janvier");
             add("Fevrier");
@@ -83,46 +82,32 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
             add("Decembre");
         }};
 
-        SimpleDateFormat sdf = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            sdf = new SimpleDateFormat("dd/MM/yyyy");
-        }
-        String date = sdf.format(System.currentTimeMillis());
-        /*jourActuel = date.substring(0, 2);
-        moisActuel = Annee.get(Integer.parseInt(date.substring(3, 5))-1);
-        anneeActuelle = date.substring(6, 10);*/
-
-        /*int moisVal;
-        if(Integer.parseInt(getArguments().getString("monthEvent"))<=12){
-            moisVal=Integer.parseInt(getArguments().getString("monthEvent"))-1;
-        }
-        else{
-            moisVal=Integer.parseInt(getArguments().getString("monthEvent"))%12-1;
-        }*/
-
-
-
-
         ArrayList<String> listeEvents = new ArrayList<>();
+        // On utilise inflate pour afficher le fragment dans le bon layout
         View myView = inflater.inflate(R.layout.fragment_jour, container, false);
         ListeMois listeMois = new ListeMois();
+        //on récupère le mois dans lequel se trouve l'évenement
         Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent")));
         ArrayList<Jour> listeJours = mois.getListeJours();
+        //on récupère le jour dans lequel se trouve l'évenement
         Jour j1 = listeJours.get(Integer.parseInt(getArguments().getString("dayEvent")));
 
         jourAffiche = getArguments().getString("dayEvent");
         moisAffiche = Annee.get(mois.getNumeroMois()-1);
         anneeAffiche = String.valueOf(j1.getAnnee());
 
+        //création de la liste des évenements qui sera affiché
         for(int k=0; k<j1.getEvent().size(); k++){
             listeEvents.add(j1.getEvent().get(k).getNom());
         }
 
+        //afichage de la liste des évenements dans la listView
         this.list = (ListView) myView.findViewById(R.id.list_item);
         ArrayAdapter<String> arrayAdapter
                 = new ArrayAdapter<String>(getActivity(), R.layout.grid_view_item_1,listeEvents);
-
         list.setAdapter(arrayAdapter);
+
+        //On  lit la position de l'élément de la liste qui a été cliqué dessus, pour savoir quel évenement sera affiché
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -131,14 +116,11 @@ public class JourFragment extends Fragment implements AdapterView.OnItemClickLis
 
         });
 
+        //affichage de la date
         TextView dateJour = (TextView)myView.findViewById(R.id.jour_actuel);
         dateJour.setText(jourAffiche);
         TextView dateMoisAnnee = (TextView)myView.findViewById(R.id.mois_annee_actuel);
         dateMoisAnnee.setText(moisAffiche+" "+anneeAffiche);
-        //TextView userName = (TextView)myView.findViewById(R.id.user_name);
-        //userName.setText(getArguments().getString("Name"));
-
-
 
         return myView;
     }

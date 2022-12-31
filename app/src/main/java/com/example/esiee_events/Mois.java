@@ -15,16 +15,15 @@ public class Mois {
     int premierJour;
 
     public Mois(int tailleMois, int numeroMois, int annee, int premierJour) {
-        this.listeJours=listeJours;
         this.tailleMois=tailleMois;
         this.numeroMois=numeroMois;
         this.annee=annee;
         this.premierJour=premierJour;
 
+        //on remplit la liste avec des jours sans évenements pour l'initialiser
         for(int k=0; k<tailleMois;k++ ){
             Jour jour = new Jour(false, k+1, numeroMois, annee);
             listeJours.add(jour);
-
         }
     }
 
@@ -65,13 +64,11 @@ public class Mois {
         this.premierJour=premierJour;
     }
 
-
-
     public void setJour(int dateJour, Jour jour) {
+        //Le jour est modifié dans la liste de jours
         listeJours.set(dateJour, jour);
+        //contient toutes les dates des evenements dans le mois
         listeEvents.add(dateJour);
     }
-
-
 
 }

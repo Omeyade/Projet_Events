@@ -38,10 +38,6 @@ public class EvenementFragment extends Fragment {
         // On utilise inflate pour afficher le fragment dans le bon layout
         View myView = inflater.inflate(R.layout.fragment_evenement, container, false);
 
-        //On récupère la valeur du jour, et le numero de l'evenement dans la liste, depuis la main activity
-        event = Integer.parseInt(getArguments().getString("event"));
-        day = Integer.parseInt(getArguments().getString("dayEvent"));
-
         ListeMois listeMois = new ListeMois();
         //on récupère le mois dans lequel se trouve l'évenement
         Mois mois = listeMois.getDatalist().get(Integer.parseInt(getArguments().getString("monthEvent")));
